@@ -1,316 +1,275 @@
+<?php
+	$title = 'Lesson 3 - HW';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title><?= $title; ?></title>
 </head>
 <body>
 <p style="color: blue">Первое задание</p>
 <!--------------------------------Первое задание-------------------------------->
 <?php
 
-	$a = random_int(-999, 999);
-	$b = random_int(-999, 999);
-	echo "Первая переменная: {$a} ";
-	echo "Вторая переменная: {$b}<br>";
-
-	function math($a, $b)
-	{
-		if($a >= 0 && $b >= 0){
-			echo 'разность чисел: ';
-			return $a - $b;
-		}else if($a < 0 && $b < 0){
-			echo 'произведение чисел: ';
-			return $a * $b;
-		}else if($a >= 0 && $b <0){
-			echo 'сумма чисел: ';
-			return $a + $b;
-		}else if($b >= 0 && $a <0){
-			echo 'сумма чисел: ';
-			return $a + $b;
+	while($i <= 100){
+		$i++;
+		if($i % 3 == 0){
+			echo $i . ' ';
 		}
 	}
 
-	echo math($a, $b);
-
 ?>
-<p style="color: red">Я не до конца понял 2ое задание, поэтому сделал 2 варианта решения,<br>а еще сделал вариант с циклом</p>
-<p style="color: blue">Второе задание(switch case - 1ый вариант)</p>
-<!--------------------------Второе задание(switch case - 1ый вариант)-------------------------->
+<p style="color: blue">Второе задание</p>
+<!--------------------------------Второе задание-------------------------------->
 <?php
 
-	$d = random_int(0, 15);
-	echo "Случайная переменная: $d<br>";
-
-	switch ($d) {
-		case '0':
-			echo '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15';
-			break;
-		case '1':
-			echo '2 3 4 5 6 7 8 9 10 11 12 13 14 15';
-			break;
-		case '2':
-			echo '3 4 5 6 7 8 9 10 11 12 13 14 15';
-			break;
-		case '3':
-			echo '4 5 6 7 8 9 10 11 12 13 14 15';
-			break;
-		case '4':
-			echo '5 6 7 8 9 10 11 12 13 14 15';
-			break;
-		case '5':
-			echo '6 7 8 9 10 11 12 13 14 15';
-			break;
-		case '6':
-			echo '7 8 9 10 11 12 13 14 15';
-			break;
-		case '7':
-			echo '8 9 10 11 12 13 14 15';
-			break;
-		case '8':
-			echo '9 10 11 12 13 14 15';
-			break;
-		case '9':
-			echo '10 11 12 13 14 15';
-			break;
-		case '10':
-			echo '11 12 13 14 15';
-			break;
-		case '11':
-			echo '12 13 14 15';
-			break;
-		case '12':
-			echo '13 14 15';
-			break;
-		case '13':
-			echo '14 15';
-			break;
-		case '14':
-			echo '15';
-			break;
-		case '15':
-			echo '';
-			break;
+	function test($j)
+	{
+		do{
+		if($j == 0){
+			echo $j . ' - ноль<br>';
+		}else if($j % 2 == 0){
+			echo $j . ' - чётное число<br>';
+		}else{
+			echo $j . ' - нечётное число<br>';
+		}
+		$j++;
+		}while ($j <= 10);
 	}
 
-?>
-<p style="color: blue">Второе задание(switch case - 2ой вариант)</p>
-<!--------------------------Второе задание(switch case - 2ой вариант)-------------------------->
-<?php
-
-	$e = random_int(0, 15);
-	echo "Случайная переменная: $e<br>";
-
-	switch ($e) {
-		case '0':
-			echo 15;
-			break;
-		case '1':
-			echo 14;
-			break;
-		case '2':
-			echo 13;
-			break;
-		case '3':
-			echo 12;
-			break;
-		case '4':
-			echo 11;
-			break;
-		case '5':
-			echo 10;
-			break;
-		case '6':
-			echo 9;
-			break;
-		case '7':
-			echo 8;
-			break;
-		case '8':
-			echo 7;
-			break;
-		case '9':
-			echo 6;
-			break;
-		case '10':
-			echo 5;
-			break;
-		case '11':
-			echo 4;
-			break;
-		case '12':
-			echo 3;
-			break;
-		case '13':
-			echo 2;
-			break;
-		case '14':
-			echo 1;
-			break;
-		case '15':
-			echo 0;
-			break;
-	}
-
-?>
-<p style="color: blue">Второе задание(цикл)</p>
-<!----------------------------------Второе задание(цикл)---------------------------------->
-<?php
-
-	$c = random_int(0, 15);
-	echo "Случайная переменная: $c<br>";
-	$total = 15;
-
-	for($i = $c + 1; $i <= $total; $i++){
-		echo "{$i} ";
-	}
+	test(0);
 
 ?>
 <p style="color: blue">Третье задание</p>
 <!--------------------------------Третье задание-------------------------------->
 <?php
 
-	function summ($a, $b)      //переменные те же, что и к 1му заданию
-	{
-		return $a + $b;
-	}
-	echo 'Сумма чисел: ' . summ($a, $b) . '<br>';
+	$arr = [
+		'Московская область' => [
+			'Москва',
+			'Зеленоград',
+			'Клин'
+		],
+		'Ленинградская область' => [
+			'Санкт-Петербург',
+			'Всеволожск',
+			'Павловск',
+			'Кронштадт'
+		],
+		'Рязанская область' => [
+			'Рязань',
+			'Касимов',
+			'Михайлов',
+			'Сасово'
+		],
+		'Тамбовская область' => [
+			'Тамбов',
+			'Уварово',
+			'Котовск',
+			'Кирсанов'
+		],
+		'Курская область' => [
+			'Курск',
+			'Курчатов',
+			'Железногорск',
+			'Льгов'
+		]
+	];
 
-		function minus($a, $b)
-	{
-		return $a - $b;
+	foreach ($arr as $field => $value) {
+			echo $field . ':<br>';
+			foreach ($value as $city) {
+				if($city == end($value)){
+					echo $city . '.';
+				}else{
+					echo $city . ', ';
+				}
+		}
+		echo '<br>';
 	}
-	echo 'Разность чисел: ' . minus($a, $b) . '<br>';
-
-		function mult($a, $b)
-	{
-		return $a * $b;
-	}
-	echo 'Произведение чисел: ' . mult($a, $b) . '<br>';
-
-		function div($a, $b)
-	{
-		return $a / $b;
-	}
-	echo 'Результат деления чисел: ' . div($a, $b);
 
 ?>
 <p style="color: blue">Четвёртое задание</p>
 <!--------------------------------Четвёртое задание-------------------------------->
+<form method="post">
+ <p>Введите фразу на русском языке: <input type="phrase" name="phrase" /></p>
+ <p><input type="submit" value="Преобразовать текст" /></p>
+</form>
 <?php
 
-	$arg1 = random_int(0, 100);
-	$arg2 = random_int(0, 100);
-	echo "Первая переменная: {$arg1} ";
-	echo "Вторая переменная: {$arg2}<br>";
+	$lettersArr = [
+		'а' => 'a',
+		'б' => 'b',
+		'в' => 'v',
+		'г' => 'g',
+		'д' => 'd',
+		'е' => 'e',
+		'ё' => 'yo',
+		'ж' => 'zh',
+		'з' => 'z',
+		'и' => 'i',
+		'й' => 'i\'',
+		'к' => 'k',
+		'л' => 'l',
+		'м' => 'm',
+		'н' => 'n',
+		'о' => 'o',
+		'п' => 'p',
+		'р' => 'r',
+		'с' => 's',
+		'т' => 't',
+		'у' => 'u',
+		'ф' => 'f',
+		'х' => 'kh',
+		'ц' => 'ts',
+		'ч' => 'ch',
+		'ш' => 'sh',
+		'щ' => 'sch',
+		'ъ' => '\'',
+		'ы' => 'i',
+		'ь' => '\'',
+		'э' => 'e',
+		'ю' => 'yu',
+		'я' => 'ya',
+		' ' => ' ',
+		',' => ',',
+		'.' => '.',
+		'!' => '!',
+		'?' => '?'
+	];
 
-	function mathOperation($arg1, $arg2, $operation)
+	$ruPhrase = $_POST['phrase'];
+	$enPhrase = preg_split('//u', $ruPhrase, null, PREG_SPLIT_NO_EMPTY);
+
+	function translit($keyArray, $lettersArray)
 	{
-		switch ($operation) {
-			case 'сложение':
-				echo "{$operation}<br>";
-				return $arg1 + $arg2;
-				break;
-			case 'вычитание':
-				echo "{$operation}<br>";
-				return $arg1 - $arg2;
-				break;
-			case 'умножение':
-				echo "{$operation}<br>";
-				return $arg1 * $arg2;
-				break;
-			case 'деление':
-				echo "{$operation}<br>";
-				return $arg1 / $arg2;
-				break;
+		$keysInLettersArray = array_keys($lettersArray);
+		for ($k = 0; $k < count($keyArray); $k++){
+			for($l = 0; $l < count($keysInLettersArray); $l++){
+				if($keyArray[$k] == $keysInLettersArray[$l]){
+					$numLetter = $keysInLettersArray[$l];
+					echo $lettersArray[$numLetter];
+				}
+			}
 		}
 	}
 
-	echo mathOperation($arg1, $arg2, 'умножение');  //----Здесь нужно написать название операции
+	translit($enPhrase, $lettersArr);
 
 ?>
 <p style="color: blue">Пятое задание</p>
 <!--------------------------------Пятое задание-------------------------------->
+<form method="post">
+ <p>Введите любую фразу: <input type="phraseWithSpace" name="phraseWithSpace" /></p>
+ <p><input type="submit" value="get snake case" /></p>
+</form>
 <?php
 
-$currentDate =  date('Y');
-
-$content = file_get_contents('5.html');
-$content = str_replace('{{CONTENT}}', $currentDate, $content);
-echo $content;
+	$phraseWithSpace = $_POST['phraseWithSpace'];
+	$phraseWithSpace = str_ireplace(" ", "_", $phraseWithSpace);
+	echo $phraseWithSpace;
 
 ?>
 <p style="color: blue">Шестое задание</p>
 <!--------------------------------Шестое задание-------------------------------->
-<?php
-
-function power($val, $pow) {
-  if ($pow == 0) {
-    return 1;
-  }
-  if ($pow < 0) {
-    return power(1/$val, -$pow);
-  }
-  return $val * power($val, $pow-1);
-}
-
-echo power(2, 2);    //----------Здесь нужно передать число и степень----------
-
-?>
+<p style="color: green">Шестое задание находится по адресу gbphp/menu-site.php</p>
 <p style="color: blue">Седьмое задание</p>
 <!--------------------------------Седьмое задание-------------------------------->
 <?php
 
-	$hour = date('H');
-	$minute = date('i');
-
-
-function getCurrentTime($hour, $minute, $minuteType, $hourType) {
-    $textArr = array(
-        'm' => array('минута', 'минуты', 'минут'),
-        'h' => array('час', 'часа', 'часов'),
-    );
-    $hour = (int) $hour;
-    $minute = (int) $minute;
-    $hourResult = $hour . ' ';
-    $minuteResult = $minute . ' ';
-    if(isset($textArr[$hourType])) {
-        switch ( ($hour >= 20) ? $hour % 10 : $hour )
-        {
-            case 1:
-                $hourResult .= $textArr[$hourType][0];
-                break;
-            case 2:
-            case 3:
-            case 4:
-                $hourResult .= $textArr[$hourType][1];
-                break;
-            default:
-                $hourResult .= $textArr[$hourType][2];
-        }
-    }
-    echo "{$hourResult} ";
-    if(isset($textArr[$minuteType])) {
-        switch ( ($minute >= 20) ? $minute % 10 : $minute )
-        {
-            case 1:
-                $hourResult .= $textArr[$minuteType][0];
-                break;
-            case 2:
-            case 3:
-            case 4:
-                $minuteResult .= $textArr[$minuteType][1];
-                break;
-            default:
-                $minuteResult .= $textArr[$minuteType][2];
-        }
-    }
-    echo $minuteResult;
-}
-
-
-getCurrentTime($hour, $minute, 'm', 'h');
+	for($i = 0; $i <= 9; print($i++)){};
 
 ?>
+<p style="color: blue">Восьмое задание</p>
+<!--------------------------------Восьмое задание-------------------------------->
+<p style="color: red">При попытке вывести первый символ строки или любой другой её символ,<br>выводится ромбик со знаком вопроса, поэтому воспользовался функцией preg_split</p>
+<?php
+
+	foreach ($arr as $field => $value) {
+		$modifyfield = preg_split('//u', $field, null, PREG_SPLIT_NO_EMPTY);
+		if($modifyfield[0] === "К"){
+				echo $field . '<br>';
+			}
+			foreach ($value as $city){
+				{
+					$modifyCity = preg_split('//u', $city, null, PREG_SPLIT_NO_EMPTY);
+					if($modifyCity[0] === "К"){
+						echo $city . '<br>';
+					}
+				}
+		}
+	}
+
+?>
+<p style="color: blue">Девятое задание</p>
+<!--------------------------------Девятое задание-------------------------------->
+<form method="post">
+ <p>Введите фразу на русском языке: <input type="phraseLastQuest" name="phraseLastQuest" /></p>
+ <p><input type="submit" value="Преобразовать текст" /></p>
+</form>
+<?php
+
+		$letters = [
+		'а' => 'a',
+		'б' => 'b',
+		'в' => 'v',
+		'г' => 'g',
+		'д' => 'd',
+		'е' => 'e',
+		'ё' => 'yo',
+		'ж' => 'zh',
+		'з' => 'z',
+		'и' => 'i',
+		'й' => 'i\'',
+		'к' => 'k',
+		'л' => 'l',
+		'м' => 'm',
+		'н' => 'n',
+		'о' => 'o',
+		'п' => 'p',
+		'р' => 'r',
+		'с' => 's',
+		'т' => 't',
+		'у' => 'u',
+		'ф' => 'f',
+		'х' => 'kh',
+		'ц' => 'ts',
+		'ч' => 'ch',
+		'ш' => 'sh',
+		'щ' => 'sch',
+		'ъ' => '\'',
+		'ы' => 'i',
+		'ь' => '\'',
+		'э' => 'e',
+		'ю' => 'yu',
+		'я' => 'ya',
+		' ' => '_',
+		',' => ',',
+		'.' => '.',
+		'!' => '!',
+		'?' => '?',
+	];
+
+	$defaultPhrase = $_POST['phraseLastQuest'];
+	$modPhrase = preg_split('//u', $defaultPhrase, null, PREG_SPLIT_NO_EMPTY);
+
+	function translitAndSnakeCase($keyArray, $lettersArray)
+	{
+		$keysInLettersArray = array_keys($lettersArray);
+		for ($k = 0; $k < count($keyArray); $k++){
+			for($l = 0; $l < count($keysInLettersArray); $l++){
+				if($keyArray[$k] == $keysInLettersArray[$l]){
+					$numLetter = $keysInLettersArray[$l];
+					echo $lettersArray[$numLetter];
+				}
+			}
+		}
+	}
+
+	translitAndSnakeCase($modPhrase, $letters);
+
+?>
+
 </body>
 </html>
