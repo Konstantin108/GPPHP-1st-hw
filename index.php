@@ -1,39 +1,27 @@
-<?php
-	$a = 5;
-	$b = '05';
-	$h1 = 'Заголовок из переменной';
-	$title = 'Title из переменной';
-	$text = 'Домашняя работа к первому уроку';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title><?= $title; ?></title>
+	<title>Document</title>
 </head>
 <body>
-    <?php
-    	echo <<<php
-    	<h1>{$h1}</h1>
-    	<h1 style="color: red">{$text}</h1>
-    	<p style="font-size: 22px">Разбор примеров из задания #3<br>объяснения закомментированы</p>
-php;
-
-		var_dump($a == $b); //true, потому что php интерпретирует число из строки как числовой тип и отбрасыает 0 перед целым числом
-		var_dump((int)'012345'); //с точки зрения целых чисел число с 0 в начале и без него, это - одно и то же число
-		var_dump((float)123.0 === (int)123.0); //false, так как разные типы данных
-		var_dump((int)0 === (int)'hello, world'); //true, так как в строке 'hello, world' не нашлось числа, поэтому автоматически 0
-	?>
-	<p style="font-size: 22px">Разбор последнего задания</p>
 	<?php
 
-		$c = 1;
-		$d = 2;
+	$arr = [
+		'/img/img1.jpg',
+		'/img/img2.jpg',
+		'/img/img3.jpg',
+		'/img/img4.jpg',
+		'/img/img5.jpg',
+	];
 
-		$c+=+$d-$d=$c;
+	function getGallery($arr){
+		for($i = 0; $i < count($arr); $i++){
+			echo "<a href=\"{$arr[$i]}\" target=\"blank\"><img width=\"300\" src=\"{$arr[$i]}\"></a>";
+		}
+	}
 
-		var_dump($c);
-		var_dump($d);
+	getGallery($arr);
 
 	?>
 </body>
