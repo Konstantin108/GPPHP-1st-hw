@@ -1,25 +1,12 @@
-<style>
-	img{
-		width: 400px;
-	}
-</style>
 <?php
+require_once __DIR__ . '/config/lib.php';
+$pages = include __DIR__ . '/config/pages.php';
 
-	$link = mysqli_connect('127.0.0.1', 'root', 'root', 'images');
+$pageName = getPage($pages);
 
-	$result = mysqli_query($link, "SELECT * FROM img");
+ob_start();
+include __DIR__ . '/pages/' . $pageName;
+$content = ob_get_clean();
 
-	$tmp = '';
-
-	while ($row = mysqli_fetch_assoc($result)){
-	echo <<<php
-		<a href="{$row['link_to_site']}" target="blank">
-			<h1>{$row['id']}</h1>
-			<h1>{$row['name']}</h1>
-			<img src="{$row['link']}"></img>
-			<h2>вес изображения: {$row['size']} кб</h2>
-		</a>
-
-php;
-
-}
+$html = file_get_contents('main.html');
+echo str_replace('{{content}}', $content, $html);
